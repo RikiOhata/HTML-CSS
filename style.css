@@ -1,9 +1,14 @@
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
 body {
     color: #333;
     font-size: 14px;
     font-weight: 500;
     font-family: "游ゴシック",YuGothic,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
 }
+
 
 *, *:before, *:after {
     word-break: break-all;
@@ -13,7 +18,6 @@ body {
 .Header {
     width: 100%;
     position: absolute;
-    padding: 20px;
     display: flex;
     justify-content: space-between;
     
@@ -23,12 +27,10 @@ body {
     margin: 0 36px;
     max-width: 100%;
     position: relative;
+    display: flex;
+    justify-content: space-between;
 }
 
-@media screen and (min-width: 768px)
-.HeaderLogo {
-    transition: opacity .2s;
-}
 
 a {
     color: #333;
@@ -36,14 +38,18 @@ a {
     cursor: pointer;
 }
 
+.HeaderLogo{
+    display:block;
+    padding:20px;
+}
+
 .HeaderLogo__image--pc {
     display: block;
-    height: 20px;
+    height:20px;
     width: auto;
 }
 
 .HeaderLogo__image--sp {
-    display: none;
     height: 16px;
     width: auto;
 }
@@ -68,10 +74,6 @@ ul{
     list-style: none;
 }
 
-@media screen and (min-width: 768px)
-.HeaderNavListItem {
-    transition: opacity .2s;
-}
 
 .HeaderNavListItem {
     margin-right: 45px;
@@ -120,16 +122,29 @@ ul{
 
 
 .FirstView {
-    background-image: url(//camp.potepan.com/wp-content/themes/potepancamp/assets/styles/../images/home/first-view/top-hero.jpg);
+    background-image: url(https://camp.potepan.com/wp-content/themes/potepancamp/assets/styles/../images/home/first-view/top-hero.jpg);
     background-size: cover;
     background-position: center;
     padding-top: 100px;
     padding-bottom: 28px;
 }
 
+.FirstView__main-image {
+    width: 100%;
+}
 
 .FirstView__main-image--sp {
     display: none;
+}
+
+
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+section {
+    display: block;
 }
 
 .FirstView__container {
@@ -181,6 +196,10 @@ ul{
     width: 306px;
 }
 
+.FirstViewContent__images img:last-of-type {
+    margin-right: 0;
+}
+
 
 .FirstViewContent__buttons a {
     align-items: center;
@@ -219,9 +238,8 @@ ul{
 }
 
 .AboutWrapper {
-    padding: 120px 0;
-    background-color: #f79214;
     padding: 44px 0;
+    background-color: #f79214;
 }
 
 .About {
@@ -244,11 +262,10 @@ video {
     object-fit: contain;
 }
 
+
 .About__title {
-    align-items: center;
     display: flex;
     flex-direction: column;
-    margin-bottom: 60px;
     width: 100%;
     align-items: flex-start;
     margin-bottom: 0;
@@ -261,16 +278,11 @@ video {
     letter-spacing: .1em;
     line-height: 54px;
     width: 100%;
-}
-
-.About__title h2, .About__title p {
     color: #fff;
     text-align: left;
-}
-
-.About__title h2 {
     margin-bottom: 10px;
 }
+
 
 .About__title h2>span {
     font-family: 'Lato',sans-serif;
@@ -281,11 +293,18 @@ video {
     font-weight: 900;
 }
 
+.About__title br {
+    display: none;
+}
+
 .About__title p {
     font-size: 16px;
     font-weight: 700;
     line-height: 26px;
     margin-bottom: 16px;
+    color: #fff;
+    text-align: left;
+
 }
 
 .About__title p {
@@ -307,4 +326,198 @@ video {
 body, div, p, ul, ol, li, dl, dt, dd, table, th, td, img, figure, h1, h2, h3, h4, h5, h6, form, select {
     margin: 0;
     padding: 0;
+}
+
+a:hover{
+    opacity: 0.8;
+}
+
+
+
+
+
+@media screen and (max-width: 767px){
+.Header {
+    padding-top:20px;
+}
+.HeaderContainer {
+    max-width: 90%;
+    margin:10px;
+}
+.HeaderLogo {
+    transition: opacity .2s;
+    display:block;
+    padding:0;
+}
+.HeaderNavList {
+    top: 52px;
+}
+main {
+    padding-top: 52px;
+}
+.FirstView {
+    padding-top: 0;
+    padding-bottom: 35px;
+    background-size:250%;
+    background-repeat: no-repeat;
+    background-position: 90% 0%;
+
+}
+
+.FirstView__main-image--sp {
+    display: block;
+}
+
+.FirstView__container {
+    margin-top: -45vw;
+}
+.FirstView__container {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.FirstViewContent {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.FirstViewContent__title {
+    font-size: 25px;
+    line-height: 36px;
+    margin-left: calc(((100vw - 100%)/2)*-1);
+    margin-right: calc(((100vw - 100%)/2)*-1);
+}
+.FirstViewContent__images {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    width: 100%;
+}
+.FirstViewContent__images img {
+    width: 27.5%;
+}
+.FirstViewContent__buttons {
+    flex-direction: column;
+}
+.FirstViewContent__buttons a:first-of-type {
+    margin-right: 0;
+}
+.FirstViewContent__buttons a {
+    width: 100% !important;
+}
+.FirstViewContent__buttons a:last-of-type {
+    display: none;
+}
+.AboutWrapper {
+    padding: 30px 0;
+}
+.About {
+    max-width: none;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.About__video {
+    width: 100%;
+}
+.About__title {
+    margin-bottom: 0;
+    width: 100%;
+}
+.About__title h2 {
+    font-size: 33px;
+    line-height: 1.4;
+}
+
+}
+
+
+
+
+
+
+@media screen and (max-width: 1080px){
+.Header {
+    background-color: #fff;
+    z-index: 10;
+}
+.Header--common {
+    position: fixed !important;
+}
+.HeaderNavHamburger {
+    cursor: pointer;
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 21px;
+    z-index: 100;
+}
+.HeaderNavHamburger__line:first-child {
+    top: 0;
+}
+.HeaderNavHamburger__line:last-child {
+    top: 100%;
+}
+.HeaderNavHamburger__line {
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    transform: translate(0,-50%);
+    border-radius: 10px;
+    transition: top .2s,transform .2s,opacity .3s;
+}
+.HeaderNavList {
+    overflow-y: scroll;
+    position: fixed;
+    top: 60px;
+    left: 100%;
+    width: 100%;
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 75px;
+    transition: transform .5s;
+    z-index: 99;
+    background-color: rgba(0,0,0,.8);
+    -webkit-overflow-scrolling: touch;
+    height: 100%;
+}
+.HeaderNavListItem {
+    margin-right: 0;
+}
+.HeaderNavListItem__link {
+    padding: 20px 0;
+}
+.HeaderNavListItem__link>span:first-child {
+    font-size: 16px;
+    letter-spacing: 5px;
+    color: #fff;
+}
+.HeaderNavListItem__link>span:last-child {
+    font-size: 12px;
+    margin-top: 10px;
+    color: #f79214;
+    letter-spacing: 2px;
+}
+.HeaderNavListItem__button {
+    font-size: 16px;
+    margin: 0 auto;
+    height: 60px;
+    width: 250px;
+}
+main {
+    padding-top: 60px;
+}
+.About {
+    flex-direction: column;
+}
+.About__video {
+    margin-bottom: 16px;
+    width: 75%;
+}
+.About__title {
+    margin-left: 0;
+    width: 75%;
+}
+
 }
